@@ -1,0 +1,7 @@
+This email is sent by logcheck on:
+
+<%= ' ' * ([0, 36 - $fqdn.length / 2].max) + $fqdn %>
+
+If you no longer wish to receive such mail, you can either deinstall the
+logcheck package or modify its configuration file (managed by Puppet).
+
