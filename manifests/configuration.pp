@@ -53,5 +53,8 @@ class logcheck::configuration (
 		content => template('logcheck/header.txt'),
 	}
 
+
+	Class['logcheck::install'] -> Class['logcheck::configuration']
+
 }
 
