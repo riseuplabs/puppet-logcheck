@@ -5,5 +5,4 @@ class logcheck::install {
 		ensure => installed
 	}
 
-	Class['logcheck::install'] -> Class['logcheck::configuration']
 }

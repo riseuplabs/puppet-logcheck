@@ -1,5 +1,5 @@
 
-class logcheck::configuration (
+class logcheck::configure (
 	$root_user = 'root',
 	$root_group = 'root',
 	$logcheck_group = 'logcheck',
@@ -54,7 +54,7 @@ class logcheck::configuration (
 	}
 
 
-	Class['logcheck::install'] -> Class['logcheck::configuration']
+	Class['logcheck::install'] -> Class['logcheck::configure']
 
 }
 
