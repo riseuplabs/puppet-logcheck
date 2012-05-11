@@ -1,7 +1,9 @@
 
-class logcheck::install {
+class logcheck::install inherits logcheck::params {
 
-	package { logcheck :
+	$packages = $logcheck::params::packages
+
+	package { $packages :
 		ensure => installed
 	}
 
