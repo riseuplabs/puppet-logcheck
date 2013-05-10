@@ -1,10 +1,12 @@
-class logcheck::install 
+class logcheck::install ( $version = 'installed' )
 {
 
   include logcheck::params
+ 
+  $packages = $logcheck::params::packages
 
   package { $packages :
-    ensure => installed
+    ensure => $version
   }
 
   '/var/lock/logcheck':
@@ -12,6 +14,6 @@ class logcheck::install
     mode    => '0755',
     owner   => logcheck,
     group   => logcheck,
-    require => [ Package['logcheck'] ];
+    require => [ Package['logcheck'], Package['logcheck-database'] ];
 
 }

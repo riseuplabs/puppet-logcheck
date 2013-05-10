@@ -2,7 +2,7 @@ class logcheck::params {
 
   $packages = $::operatingsystem ? {
     ubuntu => ['logcheck'],
-    debian => ['logcheck'],
+    debian => ['logcheck', 'logcheck-database', 'logtail'],
   }
 
   $email = 'logcheck'
