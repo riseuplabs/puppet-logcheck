@@ -15,4 +15,10 @@ class logcheck::params {
     'vserver' => '/var/tmp',
     default   => '/tmp'
   }
+
+  $intro = '1'
+
+  $sortuniq = '0'
+
+  $support_cracking_ignore = '0'
 }
