@@ -29,7 +29,7 @@ class logcheck::configure (
   }
 
   augeas { 'logcheck_intro':
-    incl    => $config
+    incl    => $config,
     lens    => 'Shellvars.lns',
     changes => "set INTRO ${intro}"
   }
