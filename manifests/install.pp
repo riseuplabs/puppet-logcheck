@@ -1,10 +1,17 @@
+class logcheck::install 
+{
 
-class logcheck::install inherits logcheck::params {
+  include logcheck::params
 
-	$packages = $logcheck::params::packages
+  package { $packages :
+    ensure => installed
+  }
 
-	package { $packages :
-		ensure => installed
-	}
+  '/var/lock/logcheck':
+    ensure  => directory,
+    mode    => '0755',
+    owner   => logcheck,
+    group   => logcheck,
+    require => [ Package['logcheck'] ];
 
 }
