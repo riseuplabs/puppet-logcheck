@@ -22,6 +22,15 @@ class logcheck::install ( $version = 'installed' )
       mode    => '0640',
       owner   => root,
       group   => logcheck;
+
+    '/etc/logcheck':
+      ensure  => present,
+      mode    => '0640',
+      owner   => root,
+      group   => logcheck,
+      source  => 'puppet:///modules/site_logcheck',
+      recurse => true,
+      require => [ Package['logcheck'], Package['logcheck-database'] ];
   }
 
 }
